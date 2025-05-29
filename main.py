@@ -59,20 +59,20 @@ photozip = 'https://envs.sh/cD_.jpg'
 
 
 # Inline keyboard for start command
-BUTTONSCONTACT = InlineKeyboardMarkup([[InlineKeyboardButton(text="📞 Contact", url="https://t.me/saini_contact_bot")]])
+BUTTONSCONTACT = InlineKeyboardMarkup([[InlineKeyboardButton(text="📞 Contact", url="https://t.me/staystrongbros")]])
 keyboard = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton(text="🛠️ Help", url="https://t.me/+3k-1zcJxINYwNGZl"),
-            InlineKeyboardButton(text="🛠️ Repo", url="https://github.com/nikhilsainiop/saini-txt-direct"),
+            InlineKeyboardButton(text="🛠️ Help", url="https://t.me/staystrongbros"),
+            InlineKeyboardButton(text="🛠️ Devloper", url="https://t.me/staystrongbros"),
         ],
     ]
 )
 
 # Image URLs for the random image feature
 image_urls = [
-    "https://tinypic.host/images/2025/02/07/IMG_20250207_224444_975.jpg",
-    "https://tinypic.host/images/2025/02/07/DeWatermark.ai_1738952933236-1.png",
+  "https://i.postimg.cc/JtC1yjLj/IMG-20250529-123730-492.jpg",
+    "https://i.postimg.cc/zBWXd78H/IMG-20250526-113151-476.jpg",
     # Add more image URLs as needed
 ]
 
@@ -320,7 +320,7 @@ async def start(bot, m: Message):
             f"🌟 Welcome {m.from_user.first_name}! 🌟\n\n" +
             f"Great! You are a premium member!\n"
             f"Use Command : /help to get started 🌟\n\n"
-            f"If you face any problem contact -  [𝙎𝘼𝙄𝙉𝙄 𝘽𝙊𝙏𝙎](https://t.me/saini_contact_bot)\n", disable_web_page_preview=True, reply_markup=BUTTONSCONTACT
+            f"If you face any problem contact -  [𝐖𝐀𝐑𝐑𝐈𝐎𝐑 👨‍💻](https://t.me/staystrongbros)\n", disable_web_page_preview=True, reply_markup=BUTTONSCONTACT
         )
     else:
         await asyncio.sleep(2)
@@ -357,14 +357,16 @@ async def id_command(client, message: Message):
 async def info(bot: Client, update: Message):
     
     text = (
-        f"╭────────────────╮\n"
-        f"│✨ **Your Telegram Info**✨ \n"
-        f"├────────────────\n"
-        f"├🔹**Name :** `{update.from_user.first_name} {update.from_user.last_name if update.from_user.last_name else 'None'}`\n"
-        f"├🔹**User ID :** @{update.from_user.username}\n"
-        f"├🔹**TG ID :** `{update.from_user.id}`\n"
-        f"├🔹**Profile :** {update.from_user.mention}\n"
-        f"╰────────────────╯"
+        """
+╭───────────────📋───────────────╮
+│   🧾 𝐘𝐎𝐔𝐑 𝐏𝐑𝐎𝐅𝐈𝐋𝐄 𝐈𝐍𝐅𝐎  
+├───────────────────────────────┤
+│ 👤 𝐍𝐚𝐦𝐞 : {first_name} {last_name or '❌'}  
+│ 🆔 𝐔𝐬𝐞𝐫𝐧𝐚𝐦𝐞 : @{username or 'None'}  
+│ 🔗 𝐈𝐃 : <code>{user_id}</code>  
+│ 👁️ 𝐌𝐞𝐧𝐭𝐢𝐨𝐧 : {mention}  
+╰───────────────────────────────╯
+"""
     )
     
     await update.reply_text(        
@@ -376,34 +378,29 @@ async def info(bot: Client, update: Message):
 @bot.on_message(filters.command(["help"]))
 async def txt_handler(client: Client, m: Message):
     await bot.send_message(m.chat.id, text= (
-        f"╭━━━━━━━✦✧✦━━━━━━━╮\n"
-        f"💥 𝘽𝙊𝙏𝙎 𝗖𝗢𝗠𝗠𝗔𝗡𝗗𝗦\n"
-        f"╰━━━━━━━✦✧✦━━━━━━━╯\n"
-        f"▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰\n" 
-        f"📌 𝗠𝗮𝗶𝗻 𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀:\n\n"  
-        f"➥ /start – Bot Status Check\n"
-        f"➥ /drm – Extract from .txt (Auto)\n"
-        f"➥ /y2t – YouTube → .txt Converter\n"  
-        f"➥ /t2t – Text → .txt Generator\n" 
-        f"➥ /stop – Cancel Running Task\n"
-        f"▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰ \n" 
-        f"⚙️ 𝗧𝗼𝗼𝗹𝘀 & 𝗦𝗲𝘁𝘁𝗶𝗻𝗴𝘀: \n\n" 
-        f"➥ /cookies – Update YT Cookies\n" 
-        f"➥ /id – Get Chat/User ID\n"  
-        f"➥ /info – User Details\n"  
-        f"➥ /logs – View Bot Activity\n"
-        f"▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰\n"
-        f"👤 𝐔𝐬𝐞𝐫 𝐀𝐮𝐭𝐡𝐞𝐧𝐭𝐢𝐜𝐚𝐭𝐢𝐨𝐧: **(OWNER)**\n\n" 
-        f"➥ /addauth xxxx – Add User ID\n" 
-        f"➥ /rmauth xxxx – Remove User ID\n"  
-        f"➥ /users – Total User List\n"  
-        f"▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰\n"
-        f"💡 𝗡𝗼𝘁𝗲:\n\n"  
-        f"• Send any link for auto-extraction\n"  
-        f"• Supports batch processing\n\n"  
-        f"╭────────⊰◆⊱────────╮\n"   
-        f" ➠ 𝐌𝐚𝐝𝐞 𝐁𝐲 : {CREDIT} 💻\n"
-        f"╰────────⊰◆⊱────────╯\n"
+        """
+╭━━━🛠️ 𝐇𝐄𝐋𝐏 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒 🛠️━━━╮
+
+🧩 𝐁𝐚𝐬𝐢𝐜:
+• /start — 𝐒𝐭𝐚𝐫𝐭 𝐭𝐡𝐞 𝐁𝐨𝐭  
+• /drm — 𝐃𝐫𝐚𝐰 𝐟𝐫𝐨𝐦 .𝐭𝐱𝐭  
+• /stop — 𝐒𝐭𝐨𝐩 𝐚𝐧𝐲 𝐭𝐚𝐬𝐤
+
+💻 𝐕𝐢𝐝𝐞𝐨 𝐓𝐨𝐨𝐥𝐬:
+• /y2t — 𝐘𝐓 𝐭𝐨 𝐓𝐞𝐱𝐭  
+• /cookies — 𝐔𝐩𝐝𝐚𝐭𝐞 𝐂𝐨𝐨𝐤𝐢𝐞𝐬
+
+👤 𝐔𝐬𝐞𝐫:
+• /id — 𝐘𝐨𝐮𝐫 𝐈𝐃  
+• /info — 𝐘𝐨𝐮𝐫 𝐃𝐞𝐭𝐚𝐢𝐥𝐬  
+• /logs — 𝐕𝐢𝐞𝐰 𝐀𝐜𝐭𝐢𝐯𝐢𝐭𝐲
+
+🔐 𝐀𝐝𝐦𝐢𝐧 𝐌𝐨𝐝𝐞:
+• /addauth /rmauth /users
+
+💎 𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 𝐁𝐲: @staystrongbros
+╰━━━━━━━━━━━━━━━━━━━━━━━╯
+"""
         )
     )                    
           
